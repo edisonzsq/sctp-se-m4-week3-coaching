@@ -107,9 +107,56 @@ With automation, we are able to deploy artifacts to different hosting environmen
 </details>
 
 <details>
-<summary>3. CICD Toolchain</summary>
+<summary>3. Understanding the Pipeline and Toolchains</summary>
+
+## Pipeline Anatomy
+
+CircleCI Sample [Link](https://circleci.com/docs/sample-config/)
+
+Sample:
+```yaml
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2023.03
+    steps:
+      - checkout
+      - run: echo "this is the build job"
+  test:
+    docker:
+      - image: cimg/base:2023.03
+    steps:
+      - checkout
+      - run: echo "this is the test job"
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
+
+```
+
+Observation of CircleCI YAML File:
+
+- 1 YAML has many workflows
+- 1 workflow has many jobs
+- jobs can be reusable
+
+In a typical github flow, changes in the `develop` branch would trigger a CI workflow. Changes in the `main` branch would trigger CI and CD workflow. The commonly reusable jobs are `build` and `test`.
+
+## Pipeline's Toolchain
 
 <img src="https://devops.com/wp-content/uploads/2021/05/devsecopstools.png" />
+
+- Each steps of CICD utilizes different set of tools: from development to post-deployment.
+- DevSecOps simply add security related automation into the CICD Pipeline
+
+> Question to ponder: do you need to know all these tools to be considered a decent developer?
 
 </details>
 
