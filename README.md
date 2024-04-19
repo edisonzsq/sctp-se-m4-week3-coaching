@@ -70,6 +70,8 @@ Continuous Delivery is a software development practice where code changes are au
 
 ## Components of Continuous Delivery
 
+<img style="background-color:white;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Continuous_Delivery_process_diagram.svg/1280px-Continuous_Delivery_process_diagram.svg.png" />
+
 Continuous Delivery typically consists of several key components:
 
 |Component|Description|
@@ -95,14 +97,12 @@ Continuous Delivery offers several advantages:
 - **Improved Productivity and Efficiency**
   - Removing manual gates and reducing rework associated with the traditional phased release process allows developers to move faster and more efficiently.
 
-- **Ability to manage diversed
+- **Manage Diversed Hosting Environment**
 
 With automation, we are able to deploy artifacts to different hosting environment such as Virtual MAchine, Container, and Serverless.
 
 - **Reduced Risk of Failures**
   - Continuous testing and smaller incremental changes typically mean fewer bugs and reduced risk of major failures in production.
-
-<img style="background-color:white;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Continuous_Delivery_process_diagram.svg/1280px-Continuous_Delivery_process_diagram.svg.png" />
 
 </details>
 
@@ -144,21 +144,7 @@ Prior to a major product launch, a DevOps engineer needs to set up a stable demo
 ### Outcome:
 The demo environment is successfully used in multiple stakeholder meetings, facilitating early feedback that is incorporated into the development process, improving product quality and aligning final deliverables with stakeholder expectations.
 
-## Scenario 3. Rollback
-
-### Scenario:
-After deploying a new version of an application, critical bugs are detected which severely impact user experience. A DevOps engineer must perform an immediate rollback.
-
-### Responsibilities:
-- **Rollback Planning**: Maintain and review a clear rollback strategy for every deployment, documented in the CI/CD pipeline configurations.
-- **Automation of Rollback Processes**: Use tools like Spinnaker or Ansible for automated rollback to the last stable version in production.
-- **Monitoring**: Intensively monitor the application's performance and error rates using APM tools like New Relic or Elastic APM.
-- **Post-mortem Analysis**: Conduct a thorough analysis to understand the root cause and implement measures to prevent future occurrences.
-
-### Outcome:
-The rollback is executed seamlessly, minimizing downtime. The analysis reveals that the new version lacked adequate pre-deployment testing. The DevOps engineer enhances the CI/CD pipeline by integrating additional automated tests.
-
-## Scenario 4. White Labeling Business
+## Scenario 3. White Labeling Business
 
 ### Scenario:
 A company wants to offer their application as a white-labeled product for various clients. A DevOps engineer is tasked with enabling and managing this capability efficiently.
